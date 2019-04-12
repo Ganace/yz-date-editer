@@ -59,7 +59,7 @@ function layopenImg(pt,msg) {
 	layer.prompt(
 		{
 			formType: 0,
-			value: $(pt).html(),
+			value: $(pt).attr('src'),
 			title: '请输入'+msg,
 			// area: ['800px', '350px'] //自定义文本域宽高
 		},function(val, index){
