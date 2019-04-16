@@ -189,6 +189,11 @@
             $(this).addClass('item_open_tip');
             layPrompt('item_open_tip','订单标签');
         })
+        // 商品图片
+        $('.goods-info__img').click(function() {
+            $(this).addClass('item_open_tip');
+            layPromptImg('item_open_tip','商品图片');
+        })
         // 订单信息
         $('.new-window').click(function() {
             $(this).addClass('item_open_tip');
@@ -263,6 +268,24 @@
             layer.msg('修改为' + val);
             console.log(val);
             $('.'+classname).html(val);
+            $('.'+classname).removeClass(classname);
+            layer.close(index);
+        });
+    }
+    function layPromptImg(classname,msg) {
+        layer.prompt({
+        formType: 0,
+        value: $('.'+classname).attr('src'),
+        title: '请输入'+msg,
+        end: function(index, layero) {
+            $('.'+classname).removeClass(classname);
+            layer.close(index);
+            return false;
+        },
+        }, function(val, index) {
+            layer.msg('修改为' + val);
+            console.log(val);
+            $('.'+classname).attr('src',val);
             $('.'+classname).removeClass(classname);
             layer.close(index);
         });
