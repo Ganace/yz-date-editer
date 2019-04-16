@@ -5,9 +5,6 @@
 	<title>有赞后台数据自定义</title>
 	<script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
-	<script type="text/javascript">
-		
-	</script>
 	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="layui/css/layui.css" media="all">
 	<script src="layui/layui.all.js"></script>
@@ -17,7 +14,8 @@ $(function () {
 	dianzhuzhongxin();
 })
 function dianzhuzhongxin() {
-	$.ajax( { 
+	window.location.href = 'dianzhuzhongxin.html';
+	/*$.ajax( { 
 		url: "dianzhuzhongxin.html", //这里是静态页的地址
 		type: "GET", //静态页用get方法，否则服务器会抛出405错误
 		success: function(data){
@@ -25,18 +23,22 @@ function dianzhuzhongxin() {
 			$("#youzanBody").html(data);
 			$('title').text('店主中心');
 		}
-	});
+	});*/
 }
 function tuiguangdingdan() {
-	$.ajax( { 
-		url: "shangpintuiguang.html", //这里是静态页的地址
-		type: "GET", //静态页用get方法，否则服务器会抛出405错误
-		success: function(data){
-			// var result = $(data).find("另一个html页面的指定的一部分");
-			$("#youzanBody").html(data);
-			$('title').text('商品推广订单');
-		}
-	});
+	window.location.href = 'shangpintuiguang.html';
+	// $.ajax( { 
+	// 	url: "shangpintuiguang.html", //这里是静态页的地址
+	// 	type: "GET", //静态页用get方法，否则服务器会抛出405错误
+	// 	success: function(data){
+	// 		// var result = $(data).find("另一个html页面的指定的一部分");
+	// 		$("#youzanBody").html(data);
+	// 		$('title').text('商品推广订单');
+	// 	}
+	// });
+}
+function dingdanchaxun() {
+	 window.location.href = 'dingdanchaxun.html';
 }
 function layopenAll(pt,msg) {
 	//默认prompt
@@ -76,7 +78,7 @@ function layindex() {
 	  type: 1,
 	  title:'选择编辑页',
 	  area: ['90%', '200px'], //宽高
-	  content: '<div class="layui-btn text-center m-2" onclick="dianzhuzhongxin()">店主中心（有赞分销员）</div><div class="layui-btn text-center m-2" onclick="tuiguangdingdan()">推广订单（有赞分销员）</div><div class="layui-btn text-center m-2">后台订单（有赞）</div>'
+	  content: '<div class="layui-btn text-center m-2" onclick="dianzhuzhongxin()">店主中心（有赞分销员）</div><div class="layui-btn text-center m-2" onclick="tuiguangdingdan()">推广订单（有赞分销员）</div><div class="layui-btn text-center m-2" onclick="dingdanchaxun()">后台订单（有赞）</div>'
 	});
 }
 function layOrder(pt,msg) {
